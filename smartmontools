@@ -1,0 +1,10 @@
+# Defaults for smartmontools initscript (/etc/rc3.d/S90-smartd)
+# This is a POSIX shell fragment
+# Original from Napp-it smartmontools config directions: 
+# https://www.napp-it.org/
+
+# uncomment to start smartd on system startup
+start_smartd=yes
+
+# uncomment to pass additional options to smartd on startup
+smartd_opts="--interval=1800"

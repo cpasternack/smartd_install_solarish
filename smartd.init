@@ -1,0 +1,23 @@
+#!/bin/sh
+
+case "$1" in
+  start)
+    echo "Starting smartd ..."
+    /opt/csw/sbin/smartd
+    ;;
+  stop)
+    echo "Stopping smartd ..."
+    pkill smartd
+    ;;
+  restart)
+    $0 stop
+    sleep 1 # or explicitly check that service has stopped
+    $0 start
+    ;;
+  *)
+    echo "Usage: $0 { start | stop | restart }"
+    exit 1
+    ;;
+esac
+
+exit 0
